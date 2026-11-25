@@ -21,6 +21,10 @@ function removeFromOrder(index) {
 function renderOrder() {
   orderList.innerHTML = "";
   let total = 0;
+  if (order.length === 0) {
+    orderTotal.textContent = "Din beställning är tom - lägg till något från menyn!";
+    return;
+  }
 
   order.forEach((item, index) => {
     const li = document.createElement("li");
