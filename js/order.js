@@ -3,6 +3,8 @@ const orderTotal = document.querySelector("#order-total");
 const orderCount = document.querySelector("#order-count");
 const placeOrderButton = document.querySelector("#place-order");
 const orderMessage = document.querySelector("#order-message");
+const clearOrderButton = document.querySelector("#clear-order");
+const clearMessage = document.querySelector("#clear-message");
 
 // Allt som ligger i beställningen just nu
 let order = [];
@@ -13,7 +15,7 @@ function addToOrder(item) {
 }
 
 function removeFromOrder(index) {
-  order.splice(index);
+  order.splice(index, 1);
   renderOrder();
 }
 
@@ -45,5 +47,16 @@ function renderOrder() {
 }
 
 placeOrderButton.addEventListener("click", () => {
+  if (order.length === 0) {
+    orderMessage.textContent = "Din beställning är tom!";
+    return;
+  }
+
   orderMessage.textContent = "Tack för din beställning!";
+});
+
+clearOrderButton.addEventListener("click", () => {
+  order = [];
+  renderOrder();
+  clearMessage.textContent = "Beställningen har tömts.";
 });
