@@ -13,7 +13,7 @@ function addToOrder(item) {
 }
 
 function removeFromOrder(index) {
-  order.splice(index);
+  order.splice(index, 1);
   renderOrder();
 }
 
