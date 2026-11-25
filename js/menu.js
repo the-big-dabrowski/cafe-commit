@@ -24,7 +24,7 @@ function createMenuCard(item) {
 
   li.append(category, name, price, rating);
 
-  if (item.vegetarian = true) {
+  if (item.vegetarian) {
     const badge = document.createElement("span");
     badge.classList.add("badge", "badge-veg");
     badge.textContent = "Vegetarisk";
