@@ -9,7 +9,6 @@ let order = [];
 
 function addToOrder(item) {
   order.push(item);
-  orderCount.textContent = order.length;
   renderOrder();
 }
 
@@ -41,7 +40,7 @@ function renderOrder() {
 
     total = total + item.price;
   });
-
+  orderCount.textContent = order.length;
   orderTotal.textContent = "Totalt: " + total + " kr";
 }
 
