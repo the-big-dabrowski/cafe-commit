@@ -54,10 +54,15 @@ function renderMenu(items) {
 
 // Fyller dropdownen #category-filter med kategorierna från menyn
 function populateCategories() {
+  const categories = [];
+
   menu.forEach((item) => {
+    if (!categories.includes(item.category)) {
+    categories.push(item.category);
     const option = document.createElement("option");
     option.value = item.category;
     option.textContent = item.category;
     categoryFilter.append(option);
+    }
   });
 }
